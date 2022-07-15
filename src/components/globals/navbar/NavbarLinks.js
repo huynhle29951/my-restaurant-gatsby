@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { styles } from "../../../utils"
+import { FaCartArrowDown } from "react-icons/fa"
 
 export default class NavbarLinks extends Component {
   state = {
@@ -36,6 +37,7 @@ export default class NavbarLinks extends Component {
             </li>
           )
         })}
+        <FaCartArrowDown className="cart-icon" snipcart-checkout />
       </LinkWrapper>
     )
   }
@@ -63,6 +65,11 @@ const LinkWrapper = styled.ul`
       color: ${styles.colors.mainYellow};
       padding: 0.5rem 1rem 0.5rem 1.3rem;
     }
+  }
+  .cart-icon {
+    cursor: pointer;
+    color: ${styles.colors.mainYellow};
+    font-size: 2rem;
   }
   height: ${props => (props.open ? "152x" : "0")};
   overflow: hidden;
